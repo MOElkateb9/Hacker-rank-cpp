@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int best_div(int n) {
+    vector<int> lst;
+    for (int i = 1; i <= n; ++i) {
+        if (! (n % i)) {
+            lst.push_back(i);
+        }
+    }
+    vector<int> sum_dgts;
+    for (int j : lst) {
+        int sum = sumOfDigits(j);
+        sum_dgts.push_back(sum);
+    }
+    auto max_sum_it = max_element(sum_dgts.begin(), sum_dgts.end());
+    int max_index = distance(sum_dgts.begin(), max_sum_it);
+    return lst[max_index];
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << best_div(n) << endl;
+    return 0;
+}
+
