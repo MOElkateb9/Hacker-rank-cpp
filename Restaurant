@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+    int gcd(int a,int b){
+    if(!b)
+        return a;
+        
+        return gcd(b,a%b);
+    
+}
+int main(void){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int t;cin>>t;while(t--){
+        int l , b; cin>>l>>b;
+        cout<<(l*b)/(gcd(l,b)*gcd(l,b))<<endl;
+    }
+    return 0;
+}
