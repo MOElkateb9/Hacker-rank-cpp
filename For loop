@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void print_numbers_and_odds(int n, int m) {
+    for (int i = n; i <= m; ++i) {
+        if (i <= 9) {
+            string numbers[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            cout << numbers[i] << endl;
+        } else if (i % 2 == 0) {
+            cout << "even" << endl;
+        } else {
+            cout << "odd" << endl;
+        }
+    }
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    
+    print_numbers_and_odds(n, m);
+
+    return 0;
+}
