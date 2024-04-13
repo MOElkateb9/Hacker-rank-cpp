@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+
+        vector<int> v(n);
+        for (auto& temp : v) {
+            cin >> temp;
+        }
+
+        int x = v[0];
+        for (auto& temp : v) {
+            cout << x * temp / (__gcd(x, temp)) << ' ';
+            x = temp;
+        }
+        cout << v[n - 1] << endl;
+    }
+
+    return 0;
+}
