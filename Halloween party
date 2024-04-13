@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+
+long halloweenParty(long long k) {
+
+    if (k & 1) 
+        return (k / 2ll) * (k / 2ll + 1ll);
+    
+        return (k / 2ll) * (k / 2ll);
+    
+}
+
+int main() {
+    int t;
+    cin >> t;
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        long k;
+        cin >> k;
+        long result = halloweenParty(k);
+        cout << result << endl;
+    }
+    return 0;
+}
