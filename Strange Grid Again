@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+long long strangeGrid(long r, long c) {
+    long long num;
+     if((r%2==0)) 
+     {
+          num = 10*((r/2)-1)+1;
+          num = num + 2*(c-1);
+     } 
+     else 
+     {
+          num = 10*(r/2);
+          num = num + 2*(c-1);
+     }
+     return  num;
+}
+
+int main() {
+    long long r, c;
+    cin >> r >> c; 
+
+    long long result = strangeGrid(r, c); // Calculate the value at position (r, c)
+    cout << result << endl; 
+
+    return 0;
+}
